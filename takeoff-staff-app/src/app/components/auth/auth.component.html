@@ -1,0 +1,33 @@
+<div class="auth">
+  <mat-card>
+    <mat-card-title>
+      <h1 >
+        Авторизация
+      </h1>
+    </mat-card-title>
+    <mat-card-content>
+      <form #form="ngForm" class="auth__form" (ngSubmit)="submitForm()">
+        <mat-form-field class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput [type]="'text'"
+                 name="email"
+                 [(ngModel)]="loginRequest.email" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="form-field">
+          <mat-label >Пароль</mat-label>
+          <input matInput [(ngModel)]="loginRequest.password"
+                 name="password"
+                 [type]="'password'"  >
+        </mat-form-field>
+
+        <button mat-raised-button
+                [disabled]="form.invalid"
+                color="primary">
+          Авторизоваться
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>
